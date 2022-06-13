@@ -11,6 +11,10 @@ for (tries = 1; tries <= n; tries++) {
     tries = tries - 1;
     continue;
   }
+  else{
+    alert(" number is out of range");
+    tries = tries - 1; 
+  }
 
   if (lastSeenNumber == gNumber) {
     tries = tries - 1;
@@ -19,7 +23,7 @@ for (tries = 1; tries <= n; tries++) {
     alert("Entered number is smaller than the secret number");
   } else if (gNumber > secretNumber) {
     alert("Entered number is larger than the secret number");
-  } else {
+  } else if(gNumber==secretNumber) {
     alert(
       "congragulation on guessing the secret number,the number of tries used :" +
         tries
@@ -27,5 +31,6 @@ for (tries = 1; tries <= n; tries++) {
     alert("tries remaining is :" + (n - tries));
     break;
   }
-  
+  lastSeenNumber = gNumber;
+  alert("tries remaining is :" + (n - tries));
 }
